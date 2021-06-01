@@ -1,0 +1,8 @@
+{
+    "distanceTooLarge"           : "distance too large",
+    "noDiscountPossible"         : "no discount possible",
+    "fromTo"                     : "from-to",
+    "doesNotMatchConditions"     : "does not Match conditions",
+    "indexUnderZero"             : "The index value is < zero!",
+    "indexBiggerThanArrayLength" : "The index is bigger than the array.length!"
+}
