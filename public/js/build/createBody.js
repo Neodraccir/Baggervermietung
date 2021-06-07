@@ -34,7 +34,7 @@ function createBody(window){
     body.append(header);
     header.append(headline1);
     header.append(headline2);
-    headline1.innerHTML = 'Bagger mimieten';
+    headline1.innerHTML = 'Bagger mieten';
     headline2.innerHTML = 'Bitte füllen Sie vor dem Anruf kurz das Formular aus';
     body.append(main);
     main.style.visibility = "hidden";
