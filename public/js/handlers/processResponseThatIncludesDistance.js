@@ -36,7 +36,7 @@ function processResponseThatIncludesDistance(){
                 prizeInput.value       = rentalCost;
                 plusDelivery.style.display  = "none";
                 deliverySwitch.innerHTML = "Ort zu weit entfernt"
-                deliverySwitch.style.fontSize = "0.8em";
+                deliverySwitch.style.fontSize = "calc(var(--line-height) * 0.8)";
                 deliverySwitch.style.width = "200px";
                 handleLocalStorage.storeSwitchState(deliverySwitch) 
 
@@ -48,7 +48,7 @@ function processResponseThatIncludesDistance(){
         if((distance<maxDistance)){
             deliveryLocked      = false;
             deliverySwitch.innerHTML = "Lieferung";
-            deliverySwitch.style.fontSize = "1.3em";
+            deliverySwitch.style.fontSize = "var(--line-height)";
             handleLocalStorage.storeSwitchState(deliverySwitch) 
     
         };
