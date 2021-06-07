@@ -17,6 +17,7 @@ const   express             = require('express'),
         notifyOwnerAndRenderSentPage = requireController('notifyOwnerAndRenderSentPage'),
         requestTMPOrder              = requireController('requestTMPOrder'), 
         getLockedDates               = requireController('getLockedDates'),
+        getGMapsKey                  = requireController('getGMapsKey'),
  
 //update prizesList
         createUpdatedPrizesList      = require(`${__dirname}/lib/global/createUpdatedPrizesList.js`),
@@ -32,6 +33,7 @@ sendPriceAndDistanceToClient(app);
 notifyOwnerAndRenderSentPage(app); 
 requestTMPOrder(app);
 getLockedDates(app);
+getGMapsKey(app);
 trashCollector(); 
 
   

@@ -1,0 +1,54 @@
+[33mcommit 4969ec8f75454cae866eab42350a5026ed82f0fa[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 20:00:44 2021 +0200
+
+    enabled Google Maps Api
+
+[33mcommit 91b59ef34c5099c452d771da32e3c39b8f8ee68a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 19:30:59 2021 +0200
+
+    Added missing letter in 'postPlaceReq.js' (missing 'g' in 'msg')
+
+[33mcommit c52ce62685b88cad20cfbc3b41725fdb4f091d34[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 16:00:06 2021 +0200
+
+    undid unessacary test changes to learn more about Git and GitHub
+
+[33mcommit d67e98cd7f7f65e627da34d42a5a87cd7784662b[m
+Merge: a8de5be a051d71
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 15:58:25 2021 +0200
+
+    Merge branch 'main' of github.com:Neodraccir/Baggervermietung into main
+
+[33mcommit a8de5bedbf4b4757666fc6941d4d3dfe40bc7387[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 15:58:07 2021 +0200
+
+    returned to normal
+
+[33mcommit a051d71f8c5f2b2df5838c63a38bef3deea30643[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Mon Jun 7 15:44:54 2021 +0200
+
+    Testrun -  also testing GitHub for the first time
+
+[33mcommit 50be50783752cc01fe5b63d50f6a778025313899[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Tue Jun 1 16:21:00 2021 +0200
+
+    added .gitignore for security
+
+[33mcommit b3fe3e3b95251ac2eb4826ec9a814c249022d3a8[m
+Author: Riccardo <riccardo@neutag.com>
+Date:   Tue Jun 1 16:08:39 2021 +0200
+
+    added all new files
+
+[33mcommit a49fc50b3abf17d1b7e7ff82ceaef86373382ada[m
+Author: Neodraccir <65730195+Neodraccir@users.noreply.github.com>
+Date:   Tue Jun 1 14:04:05 2021 +0200
+
+    Create README.md

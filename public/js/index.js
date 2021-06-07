@@ -4,9 +4,18 @@ import {addGlobalVar} from '/sc/generalFunctions/addGlobalVar.js';
 
 
 
-const buildDOM = function (window){
+const buildDOM = async function (window){
+
+    let gMapsKey = await fetch('/getGMapsKey');
 
     window = globalThis;
+    if(gMapsKey.ok){
+        window.apiKey = await gMapsKey.json();
+        window.apiKey = window.apiKey.api_key;
+
+    }else{
+        alert("HTTP-Errbor:"+gMapsKey.status);
+    }
     window.logThis = (text)=>{
         if(localStorage.getItem("console.log") === "true"){
             console.log(text)
