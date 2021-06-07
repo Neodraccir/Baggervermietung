@@ -15,7 +15,7 @@ function postPlaceReq(xhr){
             "user_id"           : "${localStorage.user_id}",
             "order_id"          : "${localStorage.order_id}",
             "place"             : "${localStorage.getItem("place")}",
-            "msg"               : "${localStorage.getItem("ms")}",
+            "msg"               : "${localStorage.getItem("msg")}",
             "phoneNr"           : "${localStorage.getItem("phoneNr")}"
             }`});
     logThis('requested Place: '+JSON.parse(placeData).place);
