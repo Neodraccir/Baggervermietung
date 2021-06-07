@@ -48,7 +48,7 @@ function processResponseThatIncludesDistance(){
         if((distance<maxDistance)){
             deliveryLocked      = false;
             deliverySwitch.innerHTML = "Lieferung";
-            deliverySwitch.style.fontSize = "var(--line-height)";
+            deliverySwitch.style.removeAttribute("font-size");
             handleLocalStorage.storeSwitchState(deliverySwitch) 
     
         };
