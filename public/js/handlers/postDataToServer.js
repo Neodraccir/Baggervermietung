@@ -8,7 +8,7 @@ function postDataToServer(xhr, url, data){
     logThis(data);
 
     if(document.getElementsByTagName("main")[0].style.visibility !== "hidden"){
-        loader.style.visibility = "visible"
+        loader.style.visibility = "hidden"
     }
 
 
