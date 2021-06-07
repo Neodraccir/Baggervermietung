@@ -24,7 +24,7 @@ module.exports =(app)=>{
      
         let mapsAPIDATA     = require(`${appRoot}/config/mapsAPIData.json`),
             origin          = mapsAPIDATA.origin,
-            api_key         = mapsAPIDATA.api_key,
+            api_key         = mapsAPIDATA.api_key2,
 
             firstName       = req.body.firstName,
             lastName        = req.body.lastName,
