@@ -11,7 +11,6 @@ function enterpriseSwitchHandlerFunction(){
             document.getElementById("company").setAttribute("required", trueOrFalse);
         };
 
-
     if(enterpriseSwitch.checked){
         enterpriseSwitch.checked = false;
         enterpriseSwitch.value = false;

@@ -27,7 +27,7 @@ var     formContent  = {},
                                 form.submitButton = new ElementWithAttributes('input',[
                                     {attribute: 'id', value: 'button'},
                                     {attribute: 'type', value: 'button'},
-                                    {attribute: 'onclick', value: 'formSubmitter()'},
+                                    {attribute: 'onclick', value: 'handleSubmitButton()'},
                                     {attribute: 'value', value: formContent.submitButton}
                                 ],form);
 
