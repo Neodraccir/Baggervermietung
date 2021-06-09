@@ -7,7 +7,7 @@ import {manipulateAndDeactivateButton} from '/sc/handlers/manipulateAndDeactivat
 
 function buildTable(){
 
-    if(document.getElementsByTagName("table").length < 2){
+    if(document.getElementsByTagName("table").length < 1){
         body.table       = addGlobalVar({table: new ElementWithAttributes('table',
                                                 {attribute: "id", value:"table"}, body)
                                                 });
