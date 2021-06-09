@@ -64,6 +64,7 @@ module.exports =(app)=>{
                 maxDistance = Math.floor(deliveryPrizes.length-1);
             
             if(distance>maxDistance){inclDelivery = false};
+            if(inclDelivery == 'false'){prize.deliveryCost = 0; prize.fullCost = prize.rentalCost};
             if(isNaN(prize.deliveryCost)){prize.fullCost = prize.rentalCost};
 
             let response    = `{"dist":"${distance}","fullCost":"${prize.fullCost}","deliveryCost":"${prize.deliveryCost}","rentalCost":"${prize.rentalCost}", "maxDistance":"${maxDistance}", "isInclDelivery":"${inclDelivery}", "isEnterprise":"${isBusiness}","company":"${company}","user_id":"${user_id}","order_id":"${order_id}", "amountOfDays":"${amountOfDays}", "dateStart":"${convertDate(dateStart)}", "dateEnd":"${convertDate(dateEnd)}", "travelTime":"${travelTime}", "place":"${place}", "msg":"${msg}", "phoneNr":"${phoneNr}" }`,
