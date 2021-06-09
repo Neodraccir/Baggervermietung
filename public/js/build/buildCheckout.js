@@ -12,7 +12,7 @@ function buildCheckout(){
     function deleteTableWaste(){
         let additionalTables = document.getElementsByTagName("table");
         let wasteTables = []
-        for(key in additionalTables){
+        for(let key in additionalTables){
             if(!Number.isNaN(key)){
               wasteTables.push(additionalTables[key])
             }
