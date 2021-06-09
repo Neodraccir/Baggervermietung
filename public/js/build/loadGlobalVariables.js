@@ -4,7 +4,9 @@ import {handleSubmitButton} from '/sc/handlers/handleSubmitButton.js';
 
 
 
-var loadGlobalVariables = function(){addGlobalVar({
+var loadGlobalVariables = function(){
+       
+    addGlobalVar({
         dateStart    : '0',
         dateEnd      : '0',
         inclDelivery : true,
@@ -31,6 +33,8 @@ var loadGlobalVariables = function(){addGlobalVar({
         handleSubmitButton: handleSubmitButton,
         readyForTable:      new CustomEvent('readyForTable')
 
-    })};
+    });
+    
+};
 
 export {loadGlobalVariables}

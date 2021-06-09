@@ -9,4 +9,4 @@ function handleSubmitButton(){
     formSubmitter();
 }
 
-export {formSubmitter}
+export {handleSubmitButton}
