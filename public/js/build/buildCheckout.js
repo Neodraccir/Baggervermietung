@@ -9,9 +9,21 @@ function buildCheckout(){
 
     let orderRequestMessageStatus = localStorage.getItem("orderRequestMessageStatus");
 
+    function deleteTableWaste(){
+        let additionalTables = document.getElementsByTagName("table");
+        let wasteTables = []
+        for(key in additionalTables){
+            if(!Number.isNaN(key)){
+              wasteTables.push(additionalTables[key])
+            }
+        }
+        wasteTables.forEach((e)=>e.remove())
+    }
+
     addGlobalVar({recreateForm: function(){
         localStorage.setItem("checkoutMode", "false");
         table?.remove();
+        deleteTableWaste();
         form.style.display = "grid";
         localStorage.removeItem("orderRequestMessageStatus")
 
