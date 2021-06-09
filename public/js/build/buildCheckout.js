@@ -17,7 +17,9 @@ function buildCheckout(){
               wasteTables.push(additionalTables[key])
             }
         }
-        wasteTables.forEach((e)=>e?.remove())
+        wasteTables.forEach((e)=>{
+            if(e instanceof HTMLElement){e.remove()}
+        })
     }
 
     addGlobalVar({recreateForm: function(){
