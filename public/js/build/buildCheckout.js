@@ -24,8 +24,8 @@ function buildCheckout(){
 
     addGlobalVar({recreateForm: function(){
         localStorage.setItem("checkoutMode", "false");
+        setTimeout(deleteTableWaste(),1);
         table?.remove();
-        deleteTableWaste();
         form.style.display = "grid";
         localStorage.removeItem("orderRequestMessageStatus")
 
