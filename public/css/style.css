@@ -809,6 +809,8 @@ div.litepicker>div.container__main>div.container__months{
         
 
 /*Improving Litepicker*/
+
+  
     :root{
         --litepicker-day-width: 13.65vw;
     }
@@ -817,20 +819,23 @@ div.litepicker>div.container__main>div.container__months{
     div.litepicker{
         position:absolute;
         transform: translatex(-1.9rem);
+        cursor: pointer;
     }
   
     .container__months>.month-item{
         font-size: 3em;
+        cursor: pointer;
   
     }
   
     .month-item-header{ 
         overflow:visible;
+        cursor: pointer;
   
     }
-    
   
-    .month-item-header>.button-previous-month, .month-item-header>.button-next-month{
+  
+    .month-item-header>.button-previous-month, .month-item-header>.button-next-month {
         width: 0;
         height: 0;
         border-top: 20px solid transparent;
@@ -841,16 +846,19 @@ div.litepicker>div.container__main>div.container__months{
         background: rgba(0,0,0,0);
         padding: 0;
         backdrop-filter: none;
+        cursor:pointer;
     }
   
     .month-item-header>.button-next-month{  
         border-right: none;
         border-left: 40px solid black;
+        cursor:pointer;
     }
   
   
     .month-item-header>button>svg{
         display: none;
+        cursor:ponter;
     }
   
 

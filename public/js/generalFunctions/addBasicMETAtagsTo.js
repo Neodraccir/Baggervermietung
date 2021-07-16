@@ -15,8 +15,8 @@ function addBasicMETAtagsTo(head){
                 },
                 {
                     attribute:  'content',
-                    value:      'width=display-width, height=display-height, initial-scale=1.0'
-                }
+                    value:      'width=display-width, height=display-height,  initial-scale=1, maximum-scale=1, user-scalable=0'
+                },
                 ]),
             httpEquiv         = addMetaToHead([
                 {

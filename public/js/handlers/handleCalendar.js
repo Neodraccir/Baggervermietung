@@ -14,14 +14,16 @@ function handleCalendar(window){
             dateRangeStart  = startObject.value,
             dateRangeEnd    = endObject.value;
 
-        startObject.addEventListener("keypress",(e)=>{
+ /*       startObject.addEventListener("keypress",(e)=>{
             e.preventDefault();
             });
         endObject.addEventListener("keypress",(e)=>{
             e.preventDefault();
-            });
+            });*/
         startObject.autocomplete = "qewdfce";
+        startObject.readOnly = true;
         endObject.autocomplete = "jfvnerpiuv";
+        endObject.readOnly = true;
 
         dateRangeStart = today;
         dateRangeEnd   = today;
