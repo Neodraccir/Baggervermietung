@@ -171,6 +171,7 @@ textarea {
   box-sizing: border-box;
   background: var(--secondary-bg-color);
   backdrop-filter: var(--backdrop-filter-size);
+  -webkit-backdrop-filter: var(--backdrop-filter-size);
   border-radius: var(--standard-border-radius);
   border: none;
 }
@@ -251,6 +252,8 @@ form > label:nth-child(even) {
 div.litepicker > div.container__main > div.container__months {
   background-color: var(--transparent-white);
   backdrop-filter: var(--backdrop-filter-size);
+  -webkit-backdrop-filter: var(--backdrop-filter-size);
+
 }
 
 /*\
@@ -275,6 +278,7 @@ div.litepicker > div.container__main > div.container__months {
   display: block;
   background: var(--secondary-bg-color);
   backdrop-filter: var(--backdrop-filter-size);
+  -webkit-backdrop-filter: var(--backdrop-filter-size);
   width: calc(var(--genaral-width) / 2 - var(--basic-gap) / 2);
   max-width: calc(var(--general-max-width) / 2 - var(--basic-gap) / 2);
   height: calc(var(--line-height) * 7);
@@ -375,6 +379,7 @@ input:checked + .slider:before {
 #form > [for="distance"] {
   background: var(--secondary-bg-color);
   backdrop-filter: var(--backdrop-filter-size);
+  -webkit-backdrop-filter: var(--backdrop-filter-size);
   border-radius: var(--standard-border-radius);
   padding: calc(var(--basic-gap) * 0.5);
   color: var(--text-color-two);
@@ -429,6 +434,7 @@ input:checked + .slider:before {
 
 #table {
   backdrop-filter: var(--backdrop-filter-size);
+  -webkit-backdrop-filter: var(--backdrop-filter-size);
   border: solid 1px var(--third-bg-color);
   border-radius: 30px 5px 5px 5px;
   font-size: 2em;
@@ -491,6 +497,7 @@ input:checked + .slider:before {
   width: 100vw;
   background-color: var(--confirmation-color);
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   height: 10vh;
   max-height: 500px;
   min-height: 250px;
@@ -769,6 +776,7 @@ input:checked + .slider:before {
     background: rgba(0, 0, 0, 0);
     padding: 0;
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     cursor: pointer;
   }
 
@@ -812,6 +820,7 @@ input:checked + .slider:before {
   border-radius: 4px;
   background-color: var(--secondary-bg-color);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .datepicker-dropdown .datepicker-picker {
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
