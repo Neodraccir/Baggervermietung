@@ -37,8 +37,8 @@
                 "private"    : 170
             },
 
-            {   "tariffName":"Fünf-Tages-Tarif", 
-                "minDays"    : 5, 
+            {   "tariffName":"Vier-Tages-Tarif", 
+                "minDays"    : 4, 
                 "business"   : 275,
                 "private"    : 330
             },
