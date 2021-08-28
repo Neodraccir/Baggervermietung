@@ -735,11 +735,6 @@ input:checked + .slider:before {
     height: calc(var(--line-height) * 3.5);
   }
 
-  #imprint{
-    color:wheat;
-    font-size:10rem;
-  }
-
   /*Calendar Edits*/
 
   :root {

@@ -36,18 +36,6 @@ function postFinalTMPOrder(){
 
 export {postFinalTMPOrder}
 
-//NÄCHSTEN TODOS:
-/*
- * API aktivieren Google
- * Code weiter "cleanen"
- * Passe Design an
- * Console.log auf Client ersetzten, sodass es erst aktiviert werden muss
- * Console.log auf Server-Seite verbessern
- * Verschlüssel Nutzerdaten & Keys
- * Seite auf Linode Server packen
- * URL mit Server verbinden
- * HTTPS auf Server
- * Seite auf GitHub laden
-*/
+
 
 

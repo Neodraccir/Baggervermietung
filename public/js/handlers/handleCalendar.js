@@ -111,6 +111,7 @@ function handleCalendar(window) {
       });
     }
   });
+  addGlobalVar({rangepickerObject: rangepicker})
 }
 
 export { handleCalendar };
