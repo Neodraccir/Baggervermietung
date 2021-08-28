@@ -60,6 +60,7 @@ function buildImprint(body) {
     };
 
     imprintBody.style.position = "fixed";
+    imprintBody.style.zIndex = "99";
     imprintBody.style.width = "100vw";
     imprintBody.style.height = "100vh";
     imprintBody.style.top = "0";
@@ -68,11 +69,13 @@ function buildImprint(body) {
     imprintBody.style.visibility = "hidden";
 
     h2Imprint.innerHTML = "Impressum & Datenschutzerklärung";
-    h2Imprint.style.marginTop = "1rem";
+    h2Imprint.style.margin = "2rem auto";
 
     imprintText.style.color = "white";
-    imprintText.style.marginTop = "3rem";
+    imprintText.style.maxWidth = "500px";
+    imprintText.style.margin = "3rem auto";
     imprintText.style.listStyle = "none";
+    imprintText.style.textAlign = "center";
     imprintText.style.fontSize = "20px";
     if (imprintDataLoad.ok) {
       const imprintData = await imprintDataLoad.json();
@@ -91,8 +94,12 @@ function buildImprint(body) {
 
     dataDeclaration.innerHTML = `Wir verwenden keine Cookies. \nDer Localstorage speichert lediglich die Formulardaten in Ihrem Browser. \nWir speichern keine Daten über Sie, außer die, welche für Rechnung und Angebot notwendig sind. \nWir leiten keine Daten für Werbezwecke oder aus sonstigen Gründen an Dritte weiter.`;
     dataDeclaration.style.color = "white";
-    dataDeclaration.style.margin = "2rem";
+    dataDeclaration.style.margin = "2rem auto";
     dataDeclaration.style.fontSize = "20px";
+    dataDeclaration.style.maxWidth = "500px";
+    dataDeclaration.style.textAlign = "center";
+    dataDeclaration.style.padding = "auto"
+
 
   }
   builder();
