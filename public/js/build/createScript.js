@@ -11,12 +11,10 @@ import {loadGlobalVariables} from '/sc/build/loadGlobalVariables.js';
 
 var createScript = function(window){
 
-
     checkForUserID();
 
     window = arguments[0];
     globalThis = window;
-
     loadGlobalVariables();
     handlePlaces(window);
     handleCalendar(window);

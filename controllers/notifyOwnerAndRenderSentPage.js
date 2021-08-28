@@ -6,7 +6,7 @@ module.exports = (app)=>{
             urlencodedParser          = bodyParser.urlencoded({extended:false}),
             convertDateBack           = require(`${appRoot}/lib/converter/convertDateToInternationalFormat.js`),
             create_vCard              = require(`${appRoot}/lib/converter/create_vCard.js`),
-            t                         = require(`${appRoot}/lib/telegram/telegramBotMethods.js`),
+            t                         = {},//require(`${appRoot}/lib/telegram/telegramBotMethods.js`),
             newCalendarEvent          = require(`${appRoot}/lib/googleCalendar/handleNewCalendarEvent.js`);
     var     previousReceivedValue     = "mapEventOntoCalendar";
 
