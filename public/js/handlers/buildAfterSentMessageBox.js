@@ -30,7 +30,10 @@ function buildAfterSentMessageBox(orderRequestMessageStatus){
 
     body.afterSentMessageBox.x.content.innerHTML = "X"
 
-    body.afterSentMessageBox.x.onclick = ()=>body.afterSentMessageBox.style.visibility="hidden"
+    document.querySelector("#afterSentMessageBox").style.visibility = "visible"
+
+    body.afterSentMessageBox.x.onclick = ()=>document.querySelector("#afterSentMessageBox").style.visibility = "hidden";
+
 
     if(orderRequestMessageStatus === "sent"){
         body.afterSentMessageBox.sentBoxContent.innerHTML = "Anfrage wurde erfoglreich versendet.\nJemand wird sich in Kürze bei Ihnen melden. "
