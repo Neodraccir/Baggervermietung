@@ -5,6 +5,7 @@ import {importScriptIntoTag} from '/sc/generalFunctions/importScriptIntoTag.js';
 import {addScriptTag} from '/sc/generalFunctions/addScriptTag.js';
 import {placeAutocompleteBody} from '/sc/build/placeAutocompleteBody.js';
 import {createLoader} from '/sc/build/loader.js'
+import { buildImprint } from '/sc/build/buildImprint.js';
 
 
 
@@ -41,12 +42,9 @@ function createBody(window){
     document.getElementById("loader").style.visibility = "visible";
     buildForm(main);
     placeAutocompleteBody(main);
+    buildImprint(body);
     var scriptModule =       addScriptTag.module(true, body);
     scriptModule.innerHTML = importScriptIntoTag('createScript', {arg: 'window'}); 
-
-
-
-    
 };
  
 export {createBody};  

@@ -26,5 +26,8 @@
       "*/prizesListUpdated.json",
       "db/*"
     ]
+  },
+  "devDependencies": {
+    "vanillajs-datepicker": "^1.1.4"
   }
 }

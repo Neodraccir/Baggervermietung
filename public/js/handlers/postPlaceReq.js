@@ -1,14 +1,18 @@
 import {addGlobalVar} from '/sc/generalFunctions/addGlobalVar.js';
 import {postDataToServer} from '/sc/handlers/postDataToServer.js';
+import { changeDateFormatInto } from "/sc/generalFunctions/changeDateFormatInto.js";
+
 
 function postPlaceReq(xhr){
+
+
 
     var placeData = addGlobalVar({placeData : `{
             "firstName"         : "${firstName.value}",
             "lastName"          : "${lastName.value}",
+            "dateStart"         : "${changeDateFormatInto.universal(dateRangeStart.value)}",
+            "dateEnd"           : "${changeDateFormatInto.universal(dateRangeEnd.value)}",
             "place"             : "${localStorage.getItem("place")}",
-            "dateStart"         : "${dateRangeStart.value}",
-            "dateEnd"           : "${dateRangeEnd.value}",
             "isInclDelivery"    : "${deliveryOn.checked}",
             "isEnterprise"      : "${enterpriseOn.checked}",
             "company"           : "${localStorage.getItem("company")||"No"}",

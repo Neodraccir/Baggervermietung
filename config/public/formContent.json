@@ -3,7 +3,7 @@
     "labels":{
         "first_name"        :   "Vorname",
         "last_name"         :   "Nachname",
-        "dateRangeStart"    :   "Mieten von:",
+        "dateRangeStart"    :   "Von:",
         "dateRangeEnd"      :   "Bis:",
         "phoneNr"           :   "Telefonnummer:",
         "place"             :   {"pac-input":"Adresse der Baustelle"},

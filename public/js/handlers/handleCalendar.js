@@ -1,74 +1,116 @@
-import {litepickerModule} from '/sc/dependencies/litepicker.js';
-import {addGlobalVar} from '/sc/generalFunctions/addGlobalVar.js';
-import {placeAndTimeRequest} from '/sc/handlers/placeAndTimeRequest.js';
-import {handleLocalStorage} from '/sc/handlers/handleLocalStorage.js';
+import Datepicker from "/datePicker/Datepicker.js";
+import DateRangePicker from "/datePicker/DateRangePicker.js";
+import de from "/datePicker/i18n/locales/de.js";
+import { addGlobalVar } from "/sc/generalFunctions/addGlobalVar.js";
+import { changeDateFormatInto } from "/sc/generalFunctions/changeDateFormatInto.js";
+import { placeAndTimeRequest } from "/sc/handlers/placeAndTimeRequest.js";
+import { handleLocalStorage } from "/sc/handlers/handleLocalStorage.js";
+import { checkForForbiddenDates } from "/sc/handlers/checkForForbiddenDates.js";
 
+function handleCalendar(window) {
+  let today = new Date().toISOString().slice(0, 10),
+    startObject = document.querySelector("#dateRangeStart"),
+    endObject = document.querySelector("#dateRangeEnd"),
+    dateRangeStart = startObject.value,
+    dateRangeEnd = endObject.value,
+    dateRange = [startObject, endObject];
+  startObject.addEventListener("keypress", (e) => {
+    e.preventDefault();
+  });
+  endObject.addEventListener("keypress", (e) => {
+    e.preventDefault();
+  });
 
-function handleCalendar(window){
-    litepickerModule(window);
+  startObject.autocomplete = "qewdfce";
+  startObject.readOnly = true;
+  endObject.autocomplete = "jfvnerpiuv";
+  endObject.readOnly = true;
 
+  dateRangeStart = today;
+  dateRangeEnd = today;
+  Object.assign(Datepicker.locales, de);
+  const rangepicker = new DateRangePicker(document.querySelector("#form"), {
+    language: "de",
+    disableTouchKeyboard: true,
+    allowOneSidedRange: false,
+    fomrat: "dd.mm.yyyy",
+    inputs: [
+      document.querySelector("#dateRangeStart"),
+      document.querySelector("#dateRangeEnd"),
+    ],
+  });
+  addGlobalVar({ lockedDatesArray: [] });
 
-        let today           = new Date().toISOString().slice(0,10),
-            startObject     = document.getElementById("dateRangeStart"),
-            endObject       = document.getElementById("dateRangeEnd"),
-            dateRangeStart  = startObject.value,
-            dateRangeEnd    = endObject.value;
+  var setLockedDates = addGlobalVar({
+    setLockedDates: async () => {
+      try {
+        const lockedDates = await fetch("/getLockedDates"),
+          data = await lockedDates.json(),
+          lockedArray = [];
+        data[0]?.forEach((date) => {
+          lockedArray.push(changeDateFormatInto.german(date));
+        });
 
- /*       startObject.addEventListener("keypress",(e)=>{
-            e.preventDefault();
-            });
-        endObject.addEventListener("keypress",(e)=>{
-            e.preventDefault();
-            });*/
-        startObject.autocomplete = "qewdfce";
-        startObject.readOnly = true;
-        endObject.autocomplete = "jfvnerpiuv";
-        endObject.readOnly = true;
+        rangepicker.setOptions({
+          datesDisabled: lockedArray,
+          minDate: changeDateFormatInto.german(today),
+        });
+        logThis("Locked Dates:");
+        logThis(lockedArray);
+        lockedDatesArray = lockedArray;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
 
-        dateRangeStart = today;
-        dateRangeEnd   = today;
+  setLockedDates();
 
-    var picker = addGlobalVar({
-        picker : new Litepicker({
-            element: document.getElementById('dateRangeStart'),
-            elementEnd: document.getElementById('dateRangeEnd'),
-            singleMode: false,
-            allowRepick: true, 
-            setup: function(picker){
-                picker.on('hide', function(){
-                
-                    dateStart   = new Date(picker.getDate().dateInstance.toDateString());
-                    dateEnd     = new Date(picker.getEndDate().dateInstance.toDateString());
+  dateRange.forEach((input) =>
+    input.addEventListener("changeDate", (e) => {
+      handleLocalStorage.calendar();
+      placeAndTimeRequest();
+      checkForForbiddenDates(rangepicker);
+    })
+  );
 
-                    handleLocalStorage.calendar();
+  //handle closing of calender, when clicking outisde
+  //the pure original did not handle this always rightly on mobile
 
-                    placeAndTimeRequest();
-                });
+  let calendarIsActive = ()=>document.querySelector(".datepicker.active")
+    ? true
+    : false;
 
-                }, 
-            minDate: new Date().setUTCDate(new Date().getDate()),
-            lockDays: [],
-            disallowLockDaysInRange: true
-
-        }) 
-        }),
-        setLockedDates  = addGlobalVar({setLockedDates:  async ()=>{
-            try{
-                const lockedDates = await fetch('/getLockedDates'),
-                      data        = await lockedDates.json();
-                picker.setLockDays(data);
-                logThis("Locked Dates:")
-                logThis(data)
-
-
-            }catch(err){
-                console.error(err)
+  rangepicker.datepickers.forEach((picker) => {
+    picker.show();
+    picker.hide();
+  });
+  document.addEventListener("click", (event) => {
+    if (calendarIsActive()) {
+      let pickerClicked = [false, false],
+        inputFields = [
+          document.querySelector("#dateRangeStart"),
+          document.querySelector("#dateRangeEnd"),
+        ];
+      document
+        .querySelectorAll("div.datepicker-dropdown > div")
+        .forEach((picker, index) => {
+          event.path.forEach((place) => {
+            if (place == picker) {
+              pickerClicked[index] = true;
             }
-            
-        }});
-
-
-    setLockedDates();
+            if (place == inputFields[index]) {
+              pickerClicked[index] = true;
+            }
+          });
+        });
+      pickerClicked.forEach((pickerClick, index) => {
+        if (pickerClick == false) {
+          rangepicker.datepickers[index].hide();
+        }
+      });
+    }
+  });
 }
 
-export{handleCalendar}
+export { handleCalendar };
