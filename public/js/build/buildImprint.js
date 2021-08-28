@@ -92,7 +92,7 @@ function buildImprint(body) {
       alert("HTTP-Error: " + imprintDataLoad.status);
     }
 
-    dataDeclaration.innerHTML = `Wir verwenden keine Cookies. \nDer Localstorage speichert lediglich die Formulardaten in Ihrem Browser. \nWir speichern keine Daten über Sie, außer die, welche für Rechnung und Angebot notwendig sind. \nWir leiten keine Daten für Werbezwecke oder aus sonstigen Gründen an Dritte weiter.`;
+    dataDeclaration.innerHTML = `Wir verwenden keine Cookies. \nDer Local Storage speichert lediglich die Formulardaten in Ihrem Browser. \nWir speichern keine Daten über Sie, außer die, welche für Rechnung und Angebot notwendig sind. \nWir leiten keine Daten für Werbezwecke oder aus sonstigen Gründen an Dritte weiter.`;
     dataDeclaration.style.color = "white";
     dataDeclaration.style.margin = "2rem auto";
     dataDeclaration.style.fontSize = "20px";
