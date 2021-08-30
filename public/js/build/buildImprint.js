@@ -33,9 +33,10 @@ function buildImprint(body) {
   async function builder() {
     const imprintDataLoad = await fetch("/imprintData");
     imprintLink.innerHTML = "Impressum & Datenschutz öffnen";
-    imprintLink.style.position = "absolute";
+    imprintLink.style.position = "relative";
     imprintLink.style.textAlign = "center";
-    imprintLink.style.bottom = "1rem";
+    imprintLink.style.bottom = "0";
+    imprintLink.style.margin = "0 0 1rem 0"
     imprintLink.style.width = "50vw";
     imprintLink.style.left = "25vw";
     imprintLink.style.fontSize = "20px";
