@@ -970,6 +970,9 @@ input:checked + .slider:before {
   color: var(--text-color-two);
   font-size: 0.75rem;
 }
+.datepicker-grid {
+  width: 90vw;
+}
 @media screen and (max-width: 590px),
   screen and (max-width: 1920px) and (pointer: coarse) and (hover: none) {
   .datepicker-view .week {
