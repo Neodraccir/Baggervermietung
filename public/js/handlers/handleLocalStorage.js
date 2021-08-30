@@ -25,7 +25,7 @@ var inputCollection = document.getElementsByTagName("input"),
           storedValue = localStorage.getItem(name) == "true" ? true : false,
           bucket = document.querySelector(`.extraBucket[name='${name}']`);
         bucket.checked = storedValue;
-        console.log(storedValue)
+        logThis(storedValue)
         if(storedValue){
           bucket.parentElement.classList.add("selected");
           bucket.parentElement.classList.remove("unselected");
