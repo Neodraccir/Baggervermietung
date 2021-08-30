@@ -14,6 +14,8 @@ function handleCalendar(window) {
     dateRangeStart = startObject.value,
     dateRangeEnd = endObject.value,
     dateRange = [startObject, endObject];
+
+  //prevent typing
   startObject.addEventListener("keypress", (e) => {
     e.preventDefault();
   });
@@ -21,11 +23,13 @@ function handleCalendar(window) {
     e.preventDefault();
   });
 
+  //prevent autocomplete
   startObject.autocomplete = "qewdfce";
   startObject.readOnly = true;
   endObject.autocomplete = "jfvnerpiuv";
   endObject.readOnly = true;
 
+  //set up the date picker
   dateRangeStart = today;
   dateRangeEnd = today;
   Object.assign(Datepicker.locales, de);
@@ -47,8 +51,8 @@ function handleCalendar(window) {
         const lockedDates = await fetch("/getLockedDates"),
           data = await lockedDates.json(),
           lockedArray = [];
-          console.log("locked...")
-          console.log(data);
+        console.log("locked...");
+        console.log(data);
         data?.forEach((date) => {
           lockedArray.push(changeDateFormatInto.german(date));
         });
@@ -65,25 +69,21 @@ function handleCalendar(window) {
       }
     },
   });
-
   setLockedDates();
 
   dateRange.forEach((input) =>
     input.addEventListener("changeDate", (e) => {
       handleLocalStorage.calendar();
       placeAndTimeRequest();
-      console.log("++++++++++++++++++++++++++++++++++++++++++")
       checkForForbiddenDates(rangepicker);
     })
   );
 
   //handle closing of calender, when clicking outisde
   //the pure original did not handle this always rightly on mobile
-
-  let calendarIsActive = ()=>document.querySelector(".datepicker.active")
-    ? true
-    : false;
-
+  let calendarIsActive = () => {
+    return document.querySelector(".datepicker.active") ? true : false;
+  };
   rangepicker.datepickers.forEach((picker) => {
     picker.show();
     picker.hide();
@@ -94,11 +94,13 @@ function handleCalendar(window) {
         inputFields = [
           document.querySelector("#dateRangeStart"),
           document.querySelector("#dateRangeEnd"),
-        ];
+        ],
+        path = event.path || event.composedPath();
+        
       document
         .querySelectorAll("div.datepicker-dropdown > div")
         .forEach((picker, index) => {
-          event.path.forEach((place) => {
+          path.forEach((place) => {
             if (place == picker) {
               pickerClicked[index] = true;
             }
@@ -114,7 +116,7 @@ function handleCalendar(window) {
       });
     }
   });
-  addGlobalVar({rangepickerObject: rangepicker})
+  addGlobalVar({ rangepickerObject: rangepicker });
 }
 
 export { handleCalendar };

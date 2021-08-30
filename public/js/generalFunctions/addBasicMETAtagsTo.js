@@ -11,11 +11,11 @@ function addBasicMETAtagsTo(head){
             viewpoint         = addMetaToHead([
                 {
                     attribute:  'name',
-                    value:      'viewpoint'
+                    value:      'viewport'
                 },
                 {
                     attribute:  'content',
-                    value:      'width=display-width, height=display-height,  initial-scale=1, maximum-scale=1, user-scalable=0'
+                    value:      'width="device-width", height="device-height",  initial-scale="1.0", maximum-scale="1.0", user-scalable="no"'
                 },
                 ]),
             httpEquiv         = addMetaToHead([
@@ -30,5 +30,6 @@ function addBasicMETAtagsTo(head){
                 ])
 
 }
+
 
 export{addBasicMETAtagsTo}

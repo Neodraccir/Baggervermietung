@@ -3,11 +3,11 @@
 /*\
 |*|      Animations:
 \*/
-@keyframes backgroundPosition{
-  0%{
+@keyframes backgroundPosition {
+  0% {
     background-position: top left;
   }
-  100%{
+  100% {
     background-position: bottom right;
   }
 }
@@ -29,7 +29,7 @@
   animation-name: backgroundPosition;
   animation-duration: 90s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count:  infinite;
+  animation-iteration-count: infinite;
   animation-direction: alternate;
 
   /*\
@@ -58,7 +58,7 @@
   --basic-gap: 1rem;
   --basic-padding: 1rem;
 
-/*\
+  /*\
 |*|      FILTER-VARIABLES:
 \*/
 
@@ -253,7 +253,6 @@ div.litepicker > div.container__main > div.container__months {
   background-color: var(--transparent-white);
   backdrop-filter: var(--backdrop-filter-size);
   -webkit-backdrop-filter: var(--backdrop-filter-size);
-
 }
 
 /*\
@@ -667,11 +666,15 @@ input:checked + .slider:before {
 |*|       | > ~~~~~~~~~~~~~~~~~~~~~~~~~ < |
 \*/
 
-@media screen and (max-width: 590px),
-  screen and (max-width: 1920px) and (pointer: coarse) and (hover: none) {
-    :root{
-      animation-duration: 45s;
-    }
+@media screen and (max-width: 590px), 
+
+  screen and (pointer: coarse) and (hover: none) {
+  :root {
+    animation-duration: 45s;
+  }
+  body {
+    cursor: pointer;
+  }
   #form {
     width: calc(100vw - var(--basic-gap) * 6);
     max-width: 100vw;
@@ -742,6 +745,14 @@ input:checked + .slider:before {
     height: calc(var(--line-height) * 3.5);
   }
 
+
+/*\
+|*|     ­  | > ~~~~~~~~~~~~~~~~~~~~~~~~~ < |
+|*|     < | ~~~~~~~~ DATE PICKER: ~~~~~~~ | > 
+|*|       | > ~~~~~~~~~~~~~~~~~~~~~~~~~ < |
+\*/
+
+
   /*Calendar Edits*/
 
   :root {
@@ -792,12 +803,7 @@ input:checked + .slider:before {
   }
 }
 
-/*\
-|*|     ­  | > ~~~~~~~~~~~~~~~~~~~~~~~~~ < |
-|*|     < | ~~~~~~~~ DATE PICKER: ~~~~~~~ | > 
-|*|       | > ~~~~~~~~~~~~~~~~~~~~~~~~~ < |
-\*/
-
+/* standard picker css */
 .datepicker {
   display: none;
 }
@@ -973,23 +979,24 @@ input:checked + .slider:before {
   .datepicker-view .week {
     height: 5.25rem;
     line-height: 5.25rem;
-        font-size: 3rem;
-
+    font-size: 3rem;
   }
-.datepicker-controls .button, .datepicker-view .dow {
-  font-size: 3rem;
-}
-.datepicker-view .dow {
-  margin-top: 1rem;
-}
+  .datepicker-controls .button,
+  .datepicker-view .dow {
+    font-size: 3rem;
+  }
+  .datepicker-view .dow {
+    margin-top: 1rem;
+  }
 
-.datepicker-controls .next-btn, .datepicker-controls .prev-btn{
-  width: 10vw;
-}
+  .datepicker-controls .next-btn,
+  .datepicker-controls .prev-btn {
+    width: 10vw;
+  }
 
-.datepicker-grid {
-  width: 90vw;
-}
+  .datepicker-grid {
+    width: 90vw;
+  }
 
   .calendar-weeks + .days .datepicker-grid {
     width: 25.38125rem;

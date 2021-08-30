@@ -66,6 +66,7 @@ function buildImprint(body) {
     imprintBody.style.height = "100vh";
     imprintBody.style.top = "0";
     imprintBody.style.backdropFilter = "blur(30px)";
+    imprintBody.style["-webkit-backdrop-filter"] = "blur(30px)"
     imprintBody.style.backgroundColor = "rgba(0, 0, 0, 0.34)";
     imprintBody.style.visibility = "hidden";
 
