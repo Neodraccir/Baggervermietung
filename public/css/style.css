@@ -1006,9 +1006,9 @@ background: var(--secondary-bg-color);
 }
 .datepicker-grid {
   width: 90vw;
+  max-width: 400px;
 }
-@media screen and (max-width: 590px),
-  screen and (max-width: 1920px) and (pointer: coarse) and (hover: none) {
+@media screen and (max-width: 1920px) and (pointer: coarse) and (hover: none) {
   .datepicker-view .week {
     width: 5.56875rem;
   }
