@@ -2,7 +2,6 @@ import { placeAndTimeRequest } from "/sc/handlers/placeAndTimeRequest.js";
 
 function handleCheckboxes() {
   document.querySelectorAll("div.bucket").forEach((div) => {
-      console.log(div)
     div.addEventListener("click", () => {
       if(div.classList.contains("unselected") ){
         div.classList.remove("unselected");

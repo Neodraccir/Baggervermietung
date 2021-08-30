@@ -37,7 +37,6 @@ function createForbiddenDateMessage() {
 }
 
 function checkForForbiddenDates(rangepicker) {
-
   let hasForbiddenDate = false,
     lockedDates = lockedDatesArray,
     [start, end] = rangepicker.getDates();

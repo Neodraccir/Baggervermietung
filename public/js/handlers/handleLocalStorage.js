@@ -13,7 +13,6 @@ var inputCollection = document.getElementsByTagName("input"),
   isExtraBucket = (i) => inputCollection[i].className === "extraBucket",
   storeInputDataFrom = function (collection) {
     for (let i = 0; i < collection.length; i++) {
-      console.log("pups");
       if (!isADateInput(i) && !isASwitch(i)) {
         collection[i].addEventListener("input", function () {
           for (let i = 0; i < collection.length; i++) {
@@ -26,9 +25,13 @@ var inputCollection = document.getElementsByTagName("input"),
           storedValue = localStorage.getItem(name) == "true" ? true : false,
           bucket = document.querySelector(`.extraBucket[name='${name}']`);
         bucket.checked = storedValue;
-        console.log("parents");
+        console.log(storedValue)
+        if(storedValue){
+          bucket.parentElement.classList.add("selected");
+          bucket.parentElement.classList.remove("unselected");
+          bucket.parentElement.querySelector("span").innerText += " (ausgewählt)";
+        }
         bucket.parentElement.addEventListener("click", () => {
-          console.log("clicked")
           window.localStorage.setItem(name, bucket.checked);
           let checkedExtraBuckets = 0;
           document.querySelectorAll(".extraBucket").forEach((bucket) => {
@@ -38,6 +41,7 @@ var inputCollection = document.getElementsByTagName("input"),
         });
       }
       collection[i].value = localStorage.getItem(collection[i].name);
+      collection[i].parentElement
     }
   },
   loadSwitchState = function (theSwitch, switchHandlerFunction) {
@@ -56,7 +60,6 @@ var inputCollection = document.getElementsByTagName("input"),
       placeAndTimeRequest();
     }
   };
-console.log(inputCollection);
 dateRangeStart.value = localStorage.getItem("dateRangeStart");
 dateRangeEnd.value = localStorage.getItem("dateRangeEnd");
 
