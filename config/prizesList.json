@@ -1,61 +1,61 @@
 {
-"deliveryPrizes" : [
-            {  "max_km"      : 5,
-                "price"      : 0
+  "deliveryPrizes": [
+    { "max_km": 5, "price": 0 },
 
-            },
-            
-            {   "max_km"     : 15,
-                "price"      : 45,
-                "discounts"  : [{
-                    "minDays"   : 6,
-                    "price"     : 0
-                            }]  
-            },
-          
-            {   "max_km"     : 45,
-                "price"      : 90,
-                "discounts"  : [{
-                    "minDays"   : 27,
-                    "price"     : 0
-                }]            
-            }
-        ],
+    {
+      "max_km": 15,
+      "price": 45,
+      "discounts": [
+        {
+          "minDays": 6,
+          "price": 0
+        }
+      ]
+    },
 
+    {
+      "max_km": 45,
+      "price": 90,
+      "discounts": [
+        {
+          "minDays": 27,
+          "price": 0
+        }
+      ]
+    }
+  ],
 
-"rentalPrizes" : [
-            {   "tariffName":"Tagestarif",
-                "minDays"    : 1,
-                "business"   : 80,
-                "private"    : 90
-            },
+  "rentalPrizes": [
+    { "tariffName": "Tagestarif", "minDays": 1, "business": 80, "private": 90 },
 
-            {   "tariffName":"Wochendtarif", 
-                "minDays"    : 3,
-                "from-to"    : ["Friday", "Sunday"],
-                "business"   : 145,
-                "private"    : 170
-            },
+    {
+      "tariffName": "Wochendtarif",
+      "minDays": 3,
+      "from-to": ["Friday", "Sunday"],
+      "business": 145,
+      "private": 170
+    },
 
-            {   "tariffName":"Vier-Tages-Tarif", 
-                "minDays"    : 4, 
-                "business"   : 275,
-                "private"    : 330
-            },
+    {
+      "tariffName": "Vier-Tages-Tarif",
+      "minDays": 4,
+      "business": 275,
+      "private": 330
+    },
 
-            {   "tariffName":"Wochentarif",
-                "minDays"    : 7,
-                "business"   : 420,
-                "private"    : 480
-            },
+    {
+      "tariffName": "Wochentarif",
+      "minDays": 7,
+      "business": 420,
+      "private": 480
+    },
 
-            {   "tariffName":"Monatstarif",
-                "minDays"    : 28,
-                "business"   : 1200,
-                "private"    : 1450
-            }
-        ],
-"extra" : [
-            { "buckets": [0.05, 0.05, 0.05]}
-        ]
+    {
+      "tariffName": "Monatstarif",
+      "minDays": 28,
+      "business": 1200,
+      "private": 1450
+    }
+  ],
+  "extra": { "extraBuckets": "5%" }
 }

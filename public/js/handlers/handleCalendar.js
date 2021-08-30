@@ -51,8 +51,8 @@ function handleCalendar(window) {
         const lockedDates = await fetch("/getLockedDates"),
           data = await lockedDates.json(),
           lockedArray = [];
-        console.log("locked...");
-        console.log(data);
+        logThis("locked...");
+        logThis(data);
         data?.forEach((date) => {
           lockedArray.push(changeDateFormatInto.german(date));
         });

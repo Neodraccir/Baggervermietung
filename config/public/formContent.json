@@ -1,18 +1,38 @@
 {
-    "form":{"action":"#"},
-    "labels":{
-        "first_name"        :   "Vorname",
-        "last_name"         :   "Nachname",
-        "dateRangeStart"    :   "Von:",
-        "dateRangeEnd"      :   "Bis:",
-        "phoneNr"           :   "Telefonnummer:",
-        "place"             :   {"pac-input":"Adresse der Baustelle"},
-        "switch1"           :   {"switch":["isEnterprise",{"private":"Privatperson"}, {"enterprise":"Geschäftlich"}]},
-        "switch2"           :   {"switch":["inclDelivery",{"deliveryTurnedOff":"Selbstabholung"}, {"deliveryTurnedOn":"Lieferung"}]},
-        "company"           :   {"input":"Name des Unternehmens", "required":"false"},
-        "msg"               :   {"textarea":"Noch weitere Fragen?", "required":"false"},
-        "distance"          :   "Errechnete<br>Entfernung",
-        "price"             :   "Errechneter<br>Preis"
+  "form": { "action": "#" },
+  "labels": {
+    "first_name": "Vorname",
+    "last_name": "Nachname",
+    "dateRangeStart": "Von:",
+    "dateRangeEnd": "Bis:",
+    "phoneNr": "Telefonnummer:",
+    "place": { "pac-input": "Adresse der Baustelle" },
+    "switch1": {
+      "switch": [
+        "isEnterprise",
+        { "private": "Privatperson" },
+        { "enterprise": "Geschäftlich" }
+      ]
     },
-    "submitButton"            : "Unverbindlich anfragen"
+    "switch2": {
+      "switch": [
+        "inclDelivery",
+        { "deliveryTurnedOff": "Selbstabholung" },
+        { "deliveryTurnedOn": "Lieferung" }
+      ]
+    },
+    "company": { "input": "Name des Unternehmens", "required": "false" },
+    "extraBuckets": {
+      "buckets": [
+        { "name": "Planierlöffel", "size": "80cm" },
+        { "name": "Grabenraumlöffel", "size": "200cm" },
+        { "name": "Extra Löffel", "size": "50cm" }
+      ],
+      "title": "Zusätzliche Löffel:"
+    },
+    "msg": { "textarea": "Noch weitere Fragen?", "required": "false" },
+    "distance": "Errechnete<br>Entfernung",
+    "price": "Errechneter<br>Preis"
+  },
+  "submitButton": "Unverbindlich anfragen"
 }

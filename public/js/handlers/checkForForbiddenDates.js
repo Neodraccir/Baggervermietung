@@ -37,14 +37,10 @@ function createForbiddenDateMessage() {
 }
 
 function checkForForbiddenDates(rangepicker) {
-  console.log(
-    "-----------------------------------------------------------------------------------------------------------------"
-  );
+
   let hasForbiddenDate = false,
     lockedDates = lockedDatesArray,
     [start, end] = rangepicker.getDates();
-  console.log(start);
-  console.log(end);
   //turn the dates Into Objects
   lockedDates = (() => {
     let lockedDatesAsObjects = [];
@@ -62,14 +58,9 @@ function checkForForbiddenDates(rangepicker) {
       hasForbiddenDate = true;
     }
     if (lockedDate.year >= start.year) {
-      console.log("yo");
       if (lockedDate.year <= end.year) {
-        console.log("--bo");
         if (lockedDate.month >= start.month) {
-          console.log("---zo");
-          console.log(end);
           if (lockedDate.month <= end.month) {
-            console.log("------ko");
             if (
               lockedDate.month > start.month &&
               lockedDate.month < end.month
@@ -80,7 +71,6 @@ function checkForForbiddenDates(rangepicker) {
               lockedDate.month >= start.month &&
               lockedDate.month < end.month
             ) {
-              console.log("----------mo");
               if (lockedDate.day > start.day) {
                 hasForbiddenDate = true;
               }
@@ -104,7 +94,6 @@ function checkForForbiddenDates(rangepicker) {
   if (hasForbiddenDate) {
     rangepicker.setDates({ clear: true }, { clear: true });
     createForbiddenDateMessage();
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
   }
 }
 

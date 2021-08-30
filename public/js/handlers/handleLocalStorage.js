@@ -10,13 +10,31 @@ var inputCollection = document.getElementsByTagName("input"),
   isASwitch = (i) =>
     inputCollection[i].name === "inclDelivery" ||
     inputCollection[i].name === "isEnterprise",
+  isExtraBucket = (i) => inputCollection[i].className === "extraBucket",
   storeInputDataFrom = function (collection) {
     for (let i = 0; i < collection.length; i++) {
+      console.log("pups");
       if (!isADateInput(i) && !isASwitch(i)) {
         collection[i].addEventListener("input", function () {
           for (let i = 0; i < collection.length; i++) {
             localStorage.setItem(collection[i].name, collection[i].value);
           }
+        });
+      }
+      if (isExtraBucket(i)) {
+        let name = inputCollection[i]?.name,
+          storedValue = localStorage.getItem(name) == "true" ? true : false,
+          bucket = document.querySelector(`.extraBucket[name='${name}']`);
+        bucket.checked = storedValue;
+        console.log("parents");
+        bucket.parentElement.addEventListener("click", () => {
+          console.log("clicked")
+          window.localStorage.setItem(name, bucket.checked);
+          let checkedExtraBuckets = 0;
+          document.querySelectorAll(".extraBucket").forEach((bucket) => {
+            if (bucket.checked) checkedExtraBuckets++;
+          });
+          window.localStorage.setItem("extraBuckets", checkedExtraBuckets);
         });
       }
       collection[i].value = localStorage.getItem(collection[i].name);
@@ -38,9 +56,9 @@ var inputCollection = document.getElementsByTagName("input"),
       placeAndTimeRequest();
     }
   };
+console.log(inputCollection);
 dateRangeStart.value = localStorage.getItem("dateRangeStart");
 dateRangeEnd.value = localStorage.getItem("dateRangeEnd");
-
 
 handleLocalStorage.calendar = function () {
   localStorage.setItem("dateRangeStart", dateRangeStart.value);

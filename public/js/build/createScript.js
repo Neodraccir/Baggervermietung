@@ -6,9 +6,9 @@ import { handleDelivery } from "/sc/handlers/handleDelivery.js";
 import { initMap } from "/sc/dependencies/placeAutocomplete.js";
 import { handleSwitches } from "/sc/handlers/handleSwitches.js";
 import { handleLocalStorage } from "/sc/handlers/handleLocalStorage.js";
+import { handleCheckboxes } from "/sc/handlers/handleCheckboxes.js";
 import { loadGlobalVariables } from "/sc/build/loadGlobalVariables.js";
 import { checkForForbiddenDates } from "/sc/handlers/checkForForbiddenDates.js";
-
 
 var createScript = function (window) {
   checkForUserID();
@@ -25,6 +25,7 @@ var createScript = function (window) {
   });
   initMap(window);
   handleLocalStorage(window);
+  handleCheckboxes();
   checkForForbiddenDates(rangepickerObject);
 };
 

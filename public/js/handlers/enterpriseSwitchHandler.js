@@ -4,8 +4,8 @@ import {placeAndTimeRequest} from '/sc/handlers/placeAndTimeRequest.js';
 
 function enterpriseSwitchHandlerFunction(){
 
-    let turnCompanyVisibilityTo = function (string){
-        document.querySelector("[for=company]").style = `display: ${string}`;
+    let turnCompanyVisibilityTo = function (mode){
+        document.querySelector("[for=company]").style = `display: ${mode}`;
         },
         turnCompanyRequirementTo = function (trueOrFalse){
             document.getElementById("company").setAttribute("required", trueOrFalse);
