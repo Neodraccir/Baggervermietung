@@ -8,7 +8,8 @@ function lookForUniversalDate(date) {
 function lookForStringDate(date) {
   let stringDate =
     /[\w]*\s(?<month>\w\w\w)\s(?<day>\d\d)\s(?<year>\d\d\d\d)/y.exec(date);
-  switch (stringDate.groups.month) {
+    console.log(stringDate)
+  switch (stringDate?.groups?.month) {
     case "Jan":
       stringDate.groups.month = "01";
       break;
@@ -36,7 +37,7 @@ function lookForStringDate(date) {
     case "Sep":
       stringDate.groups.month = "09";
       break;
-    case "Okt":
+    case "Oct":
       stringDate.groups.month = "10";
       break;
     case "Nov":
@@ -61,9 +62,9 @@ const changeDateFormatInto = {
   object: function (date) {
     function makeItAnObject(objToBe) {
       return {
-        year: Number(objToBe.groups.year),
-        month: Number(objToBe.groups.month),
-        day: Number(objToBe.groups.day),
+        year: Number(objToBe?.groups?.year),
+        month: Number(objToBe?.groups?.month),
+        day: Number(objToBe?.groups?.day),
       };
     }
 

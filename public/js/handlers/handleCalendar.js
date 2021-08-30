@@ -72,6 +72,7 @@ function handleCalendar(window) {
     input.addEventListener("changeDate", (e) => {
       handleLocalStorage.calendar();
       placeAndTimeRequest();
+      console.log("++++++++++++++++++++++++++++++++++++++++++")
       checkForForbiddenDates(rangepicker);
     })
   );
