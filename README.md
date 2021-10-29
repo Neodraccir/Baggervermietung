@@ -1,4 +1,4 @@
 # Baggervermietung
 One-page tool for leasing a digger in German
 
-leih-den-bagger.de
+www.leih-den-bagger.de
